@@ -15,4 +15,4 @@ ADD uncachable /etc/polipo/uncachable
 
 EXPOSE 5566 4444
 
-CMD /usr/local/bin/start.rb
+CMD ["/bin/sh", "-c", "/usr/local/bin/start.rb"]
