@@ -6,7 +6,7 @@ global
 defaults
   mode http
   maxconn 1024
-  option  httplog
+  option  httplog clf
   option  dontlognull
   retries 3
   timeout connect 5s
@@ -17,7 +17,6 @@ defaults
 listen stats 
   bind *:4444
   mode            http
-  log             global
   maxconn 10
   timeout client      100s
   timeout server      100s
@@ -30,6 +29,7 @@ listen stats
   stats uri /haproxy?stats
 
 
+
 frontend rotating_proxies
   mode http
   bind *:<%= port %>
@@ -40,5 +40,5 @@ backend tor
   balance leastconn # http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#balance
 
   <% backends.each do |b| %>
-  server <%= b[:name] %><%= b[:port] %> <%= b[:addr] %>:<%= b[:port] %>
+  server <%= b[:name] %><%= b[:port] %> <%= b[:addr] %>:<%= b[:port] %> check
   <% end %>
