@@ -1,8 +1,8 @@
 FROM alpine:latest
-RUN apk --no-cache add tor haproxy wget curl zlib-dev openssl-dev ruby
-RUN apk add polipo --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
-
-RUN gem install excon
+RUN apk update
+RUN apk --no-cache add tor haproxy wget curl zlib-dev openssl-dev ruby &&\
+    apk add polipo --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ &&\
+    gem install excon
 
 ADD start.rb /usr/local/bin/start.rb
 RUN chmod +x /usr/local/bin/start.rb
