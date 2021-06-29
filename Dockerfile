@@ -1,4 +1,6 @@
 FROM alpine:latest
+
+USER root
 RUN apk --no-cache add tor haproxy wget curl zlib-dev openssl-dev ruby
 RUN apk add polipo --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 
