@@ -1,7 +1,7 @@
 docker-rotating-proxy
 =====================
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/am6puk/rotating-proxy?style=flat-square)](https://hub.docker.com/r/am6puk/rotating-proxy)
+[![Docker Pulls](https://img.shields.io/docker/pulls/am6puk/rotating-proxy)](https://hub.docker.com/r/am6puk/rotating-proxy)
 
 ```
                Docker Container
